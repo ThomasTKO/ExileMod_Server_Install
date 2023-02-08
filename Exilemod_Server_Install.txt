@@ -19,7 +19,7 @@ Notepad++: https://notepad-plus-plus.org/download
 
 
 STEP 01: FOLDER STRUCTURE
-1.Download all the file and extrakt https://github.com/ThomasTKO/Server-Install
+1.Download all the file and extrakt https://github.com/ThomasTKO/Server-Install !! and extrakt on Desktop !!
 2.Drop the Arma3 Folder on C:\ 
 3.Make a Folder on exemple C:\Exile
 4.Drop the Config Folder on C:\Exile 
