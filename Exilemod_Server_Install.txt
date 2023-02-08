@@ -1,0 +1,147 @@
+OVERVIEW
+The purpose of this document is to help guide individuals through the necessary steps of setting up and
+configuring their own Exile server. The guide is accompanied by a download that includes all the necessary
+files you will need.
+DOWNLOADS
+EXILE SERVER INSTALLATION DOWNLOAD V1.0.41
+This download contains all the necessary files and tools you require to install your own Exile server
+excluding the Exile Client and Server files. Download (HERE)
+You can also find each download’s source in the below list
+INDIVIDUAL DOWNLOADS
+Exile Server: https://github.com/ThomasTKO/Server-Install
+Exile Client: https://steamcommunity.com/sharedfiles/filedetails/?id=1487484880
+Steamcmd: https://github.com/ThomasTKO/Server-Install
+Directx: https://www.microsoft.com/en-za/download/details.aspx?id=35
+MySQL: https://dev.mysql.com/get/Downloads/MySQLInstaller/mysql-installer-community-5.7.20.0.msi
+vcredist all in one installer : https://www.techpowerup.com/download/visual-c-redistributable-runtime-package-all-in-one/
+Pbo Manager: https://github.com/ThomasTKO/Server-Install
+Notepad++: https://notepad-plus-plus.org/download
+
+
+STEP 01: FOLDER STRUCTURE
+1.Download all the file and extrakt https://github.com/ThomasTKO/Server-Install
+2.Drop the Arma3 Folder on C:\ 
+3.Make a Folder on exemple C:\Exile
+4.Drop the Config Folder on C:\Exile 
+On this config/cfg Folder its your Config.cfg and Basic.cfg
+On config/log its later your Server RPT to found errors
+5.Drop all files from Restart Bat Folder on C:\Exile
+6.Coppy from Server-Install/ExileMod-Files-main/Server/Arma 3 Server/ all files and drop on C:\Exile
+7.Drop the steam Folder from https://github.com/ThomasTKO/Server-Install on C:\
+8.Open the Arma3 Folder on C:\Arma3 A3Files and edit the serverupdate.bat with Notepad++
+Line 5  SET STEAMLOGIN=name pass change Steam Login 
+Line 12 its the Pfad to your Server like C:\Exile 
+Save it and press dobbleclick on the bat , now Steam install the Arma3 Server on C:\Exile
+
+STEP 2 MYSQL
+Follow The Guid from EXILE Server-Install-master/EXILE_SERVER_INSTALLATION_GUIDE_V1.0.4.pdf
+---------------------------------------------------------------------------------------------------------
+STEP 07: MYSQL INSTALLATION
+01. install MySQL https://dev.mysql.com/get/Downloads/MySQLInstaller/mysql-installer-community-5.7.20.0.msi
+02. Accept Agreement, click “Next”
+03. Select Setup type as Full and click “Next”
+04. MySQL might report on failed requirements, click “Execute” for the installer to fix missing or
+broken requirements. You might be asked to install and/or repair previously installed
+components
+05. Complete these installations to continue.Not all requirements will be fixed and you do not
+have to fix requirements with a “Manual” status
+06. Once the components have been installed click “Next”
+07. You will be notified about failing product requirements click “Yes”
+08. Click “Execute” to proceed with installation
+09. Click “Next” twice to start the SQL Configuration
+10. Select “Config Type” as “Server Machine” and leave remaining details as default
+11. Click “Next”
+12. Configure SQL Root Password (Something you can remember)
+13. Click “Add User” and enter details below and click “OK”
+ Username: busybee
+ Password: abc123!
+14. Click “Next” to accept MySQL Account and Roles
+15. Click “Next”
+16. Click “Execute” to proceed with the MySQL installation
+17. Click “Finish to complete
+18. Click “Next” to proceed with the product configuration
+19. Click “Check to verify connection to the database
+20. Click “Next” to proceed
+21. Click “Execute” to proceed with the installation
+22. Click “Finish” to complete
+23. Click “Next” and the “Finish” to start MySQL Workbench
+24. Minimize MySQL Workbench
+25. Use keyboard shortcut (WinKey + R)
+26. Enter “services.msc” and click “Ok”
+27. Search for “MySQL57”, right click and stop service (Keep window open)
+28. Enable hidden files in Explorer and navigate to “C:\ProgramData\MySQL\MySQL Server 5.7”
+29. Right click “my.ini” and select “Edit with Notepad++”
+30. Scroll down to and change the following text:
+FROM
+# Set the SQL mode to strict
+sql-mode="STRICT_TRANS_TABLES,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION"
+TO
+# Set the SQL mode to strict
+sql-mode=""
+31. Save and overwrite “my.ini”
+32. Go back to “services.msc”. Right click “MySQL” and Start service. 
+33. Open MySQL Workbench and double click “Local Instance MySQL” and enter root password as
+configured in step 12
+34. In the left-hand pane under “Schemas” right click each schema and select “Drop Schema”. If
+prompted select “Drop Now” to continue (Schema List: sakila,test and world)
+35. Underneath the “File” tab, click the “Create new SQL query icon
+36. Once new query is created click the open file icon
+37. Navigate to “C:\Arma\Server\mysql” directory and select to open the “exile.sql” file
+38. Once file has been added, execute query by clicking run icon
+39. Refresh the Schema list by clicking the rotating arrows 
+40. Close MySQL Workbench
+-------------------------------------------------------------------------------------------------------------
+STEP 09: Give @Exileserver acces to the Database on MYSQL 
+go to C:\Exile/@Exileserver and open with Notepad extdb-conf.ini
+Edit Line 69 and 70 add what you set on MySQL
+
+-------------------------------------------------------------------------------------------------------------
+STEP 10: CONFIGURE SERVER FIREWALL
+01. Press the Window key and search for “Windows Firewall with Advance Security”
+02. Lunch “Windows Firewall with Advance Security”
+03. In the Left pane select “Inbound Rules”
+04. In the Right pane select “New Rule…”
+05. In the “Rule Wizard” windows select “Program” and click “Next”
+06. Click “Browse” and navigate to “C:\Exile\”
+07. Select and open “arma3server.exe”
+08. Click “Next”
+09. Select “Allow the connection” and click “Next”
+10. Select “Domain”, “Private” and “Public”. Click “Next”
+11. Enter rule name (Arma Inbound)
+12. Click Finish
+13. Repeat steps 1 to 12 in the “Outbound Rules” section on the left pane
+14. Close “Windows Firewall with Advance Security”
+STEP 09 Ports
+Port Forwarding
+Arma 3 uses the same default ports as Arma 2 with the addition of several ports. So if you intend running A2 and A3 servers on the same machine, you need to edit the ports used. Default ports are all UDP and as follows:
+
+Incoming
+2302 (default Arma 3 Game port) + (VON is now part of main gameport due to NAT issues)
+2303 (STEAM query, +1)
+2304 (Steam port, +2)
+2305 (VON port, +3 - not used atm. but allocated)
+2306 (BattlEye traffic, +4)
+Outgoing
+DST Port	Protocol	Destination	Comment
+2344	TCP + UDP	81.0.236.111	BattlEye - arma31.battleye.com
+2345	TCP	81.0.236.111	BattlEye - arma31.battleye.com
+2302-2307	UDP	any	Arma Server to Client Traffic
+2303	UDP	any	Arma Server STEAM query port
+2304	UDP	any	Arma Server to STEAM master traffic
+
+---------------------------------------------------------------------------------------------------------------
+STEP 11: CONFIGURE SERVER LAUNCH
+15. Navigate to “C:\Exile” and edit “restartserver.bat” with Notepad++
+Comand Line for mod and Servermod -name=Exile "-mod=@ExileMod;" "-serverMod=@ExileServer;"
+under -mod=@ExileMod; need all mods what Player can use Like Weapon like @Cup Weapon but arma hate space need rename the folder like @Cup_Weapon,make sure the Folder on server have the same name
+Under -serverMod=@ExileServer; its all what the Server need like @Infistar_Exile
+
+STEP 12: START SERVER
+You have now completed the server install and configuration. All that is left is to run the
+“restartserver.bat” file
+
+STEP 13 Auto restart 
+The servermonitor.bat on C:\Exile its a bat file what check all 10sec it arma3server.exe task open 
+its not more on C:\Windows\System32\tasklist then he run "C:\Exile/restartserver.bat" so only need always open servermonitor.bat
+to Stop the Server Use Windows Basic Task all whatever for Time to run the stopserver.bat on C:\Exile
+---------------------------------------------------------------------------------------------------------------
