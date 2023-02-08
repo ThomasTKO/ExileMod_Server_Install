@@ -16,6 +16,7 @@ MySQL: https://dev.mysql.com/get/Downloads/MySQLInstaller/mysql-installer-commun
 vcredist all in one installer : https://www.techpowerup.com/download/visual-c-redistributable-runtime-package-all-in-one/
 Pbo Manager: https://github.com/ThomasTKO/Server-Install
 Notepad++: https://notepad-plus-plus.org/download
+7zip https://7-zip.de/download.html
 
 
 STEP 01: FOLDER STRUCTURE
