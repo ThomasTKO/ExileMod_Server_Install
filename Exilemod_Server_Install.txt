@@ -143,5 +143,5 @@ You have now completed the server install and configuration. All that is left is
 STEP 13 Auto restart 
 The servermonitor.bat on C:\Exile its a bat file what check all 10sec it arma3server.exe task open 
 its not more on C:\Windows\System32\tasklist then he run "C:\Exile/restartserver.bat" so only need always open servermonitor.bat
-to Stop the Server Use Windows Basic Task all whatever for Time to run the stopserver.bat on C:\Exile
+to Stop the Server Use Windows Basic Task all whatever for Time to run the stopserver.bat on C:\Exile it close the Task and the monitor.bat make then restartserver.bat and Server Start again
 ---------------------------------------------------------------------------------------------------------------
