@@ -29,7 +29,8 @@ On config/log its later your Server RPT to found errors
 5.Drop all files from Restart Bat Folder on C:\Exile
 6.Coppy from Server-Install/ExileMod-Files-main/Server/Arma 3 Server/ all files and drop on C:\Exile
 7.Coppy the @ExileMod Folder from your Steam Workshop on C:\Exile
-Exemple C:\Program Files (x86)\Steam\steamapps\common\Arma 3\!Workshop\@ExileMod
+example where you can find the @Exilemod on YOUR PC
+! C:\Program Files (x86)\Steam\steamapps\common\Arma 3\!Workshop\@ExileMod !
 8.Drop the steam Folder from https://github.com/ThomasTKO/Server-Install on C:\
 9.Open the Arma3 Folder on C:\Arma3 A3Files and edit the serverupdate.bat with Notepad++
 Line 5  SET STEAMLOGIN=name pass change Steam Login 
