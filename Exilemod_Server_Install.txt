@@ -40,7 +40,7 @@ Save it and press dobbleclick on the bat , now Steam install the Arma3 Server on
 STEP 2 MYSQL
 Follow The Guid from EXILE Server-Install-master/EXILE_SERVER_INSTALLATION_GUIDE_V1.0.4.pdf
 ---------------------------------------------------------------------------------------------------------
-STEP 07: MYSQL INSTALLATION
+STEP 07: MYSQL INSTALLATION 
 01. install MySQL https://dev.mysql.com/get/Downloads/MySQLInstaller/mysql-installer-community-5.7.20.0.msi
 02. Accept Agreement, click “Next”
 03. Select Setup type as Full and click “Next”
