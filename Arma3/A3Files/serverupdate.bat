@@ -1,5 +1,5 @@
 @ECHO OFF
-SET STEAMUN=admin@youremail.net
+SET STEAMUN=changeme
 SET STEAMPW=chamgeme
 SET ARMASVRPATH=C:\Arma3Server
 SET STEAMPATH=C:\steam\
