@@ -2,6 +2,7 @@
 SET STEAMUN=admin@youremail.net
 SET STEAMPW=chamgeme
 SET ARMASVRPATH=C:\Arma3Server
+SET STEAMPATH=C:\steam\
 
 ::(Full client\server package)
 SET ARMAAPPID=107410
