@@ -5,7 +5,7 @@ SETLOCAL ENABLEDELAYEDEXPANSION
 	:: DEFINE the following variables where applicable to your install
 
 	SET STEAMLOGIN=username password
-	SET A3serverBRANCH=233780 -beta creatordlc
+	SET A3serverBRANCH=233780 -beta
 		:: For stable use 233780 -beta
 		:: For Dev use 233780 -beta development  creatordlc
 				:: Note, the missing qoutation marks, these need to be wrapped around the entire "+app_data......"
