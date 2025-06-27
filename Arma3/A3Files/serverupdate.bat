@@ -5,8 +5,8 @@ SETLOCAL ENABLEDELAYEDEXPANSION
 	:: DEFINE the following variables where applicable to your install
 
 	SET STEAMLOGIN=username password
-	SET A3serverBRANCH=233780 -beta
-		:: For stable use 233780 -beta
+	SET A3serverBRANCH=233780
+		:: For stable use 233780
 		:: For Dev use 233780 -beta development  creatordlc
 				:: Note, the missing qoutation marks, these need to be wrapped around the entire "+app_data......"
 				:: There is no DEV branch data yet for Arma 3 Dedicated Server package !!!
